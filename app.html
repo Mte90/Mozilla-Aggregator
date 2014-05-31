@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no" />
+		<title>Mozilla Aggregator</title>
+		<!-- Building blocks -->
+		<link rel="stylesheet" href="style/headers.css">
+		<link rel="stylesheet" href="style/switches.css">
+		<link rel="stylesheet" href="style/drawer.css">
+		<link rel="stylesheet" href="style/lists.css">
+		<link rel="stylesheet" href="style/scrolling.css">
+
+		<!-- Icons -->
+		<link rel="stylesheet" href="icons/styles/action_icons.css">
+
+		<!-- Transitions -->
+		<link rel="stylesheet" href="transitions.css">
+
+		<!-- Util CSS: some extra tricks -->
+		<link rel="stylesheet" href="util.css">
+
+		<!-- Additional markup to make Building Blocks kind of cross browser -->
+		<link rel="stylesheet" href="cross_browser.css">
+
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<section id="index" data-position="current">
+			<section data-type="sidebar">
+				<header>
+					<menu type="toolbar">
+						<a id="btn-settings"><span class="action-icon settings"></span></a>
+					</menu>
+					<h1>Mozilla World</h1>
+				</header>
+				<nav class="sites-list">
+				</nav>
+			</section>
+
+			<section id="drawer" role="region">
+				<header class="fixed">
+					<a href="#"><span class="icon icon-menu">hide sidebar</span></a>
+					<a href="#drawer"><span class="icon icon-menu">show sidebar</span></a>
+					<h1>Mozilla Aggregator</h1>
+				</header>
+				<article class="content scrollable header" data-type="list" id="rss-feeds">
+				</article>
+			</section>
+		</section>
+
+		<section role="region" id="settings" data-position="right">
+			<header class="fixed">
+				<a id="btn-settings-back" href="#"><span class="icon icon-back">back</span></a>
+				<h1>Settings</h1>
+			</header>
+			<article class="content scrollable header">
+				<div>
+					<label class="pack-switch">
+						<input type="checkbox" checked>
+						<span></span>
+					</label>
+
+					<label class="pack-switch">
+						<input type="checkbox">
+						<span></span>
+					</label>
+				</div>
+
+			</article>
+		</section>
+
+		<script type="text/javascript" defer src="js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" defer src="js/jquery.rss.js"></script>
+		<script type="text/javascript" defer src="js/app.js"></script>
+
+	</body>
+</html>

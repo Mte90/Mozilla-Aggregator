@@ -1,0 +1,20 @@
+{
+  "name": "Mozilla-Aggregator",
+  "package_path": "http://mte90.github.io/Mozilla-Aggregator/package/package.zip",
+  "version": "1.0",
+  "icons": {
+    "128": "/images/app_icon_128.png",
+    "60": "/images/app_icon_60.png"
+  },
+  "description": Mozilla worldwide sites in your phone!",
+  "launch_path": "app.html",
+  "orientation": ["portrait"],
+  "developer": {
+    "name": "Daniele Mte90 Scasciafratte",
+    "url": "http://mte90.net"
+  },
+  "default_locale": "en",
+  "permissions": {
+	  "systemXHR":{"description":"Loading the list of site"}
+	  }
+}
