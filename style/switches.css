@@ -7,10 +7,14 @@ label.pack-radio,
 label.pack-switch {
   display: inline-block;
   vertical-align: middle;
-  width: 5rem;
   height: 5rem;
   position: relative;
   background: none;
+  display: block;
+}
+
+.pack-switch span {
+	font-size: 1.5rem;
 }
 
 label.pack-checkbox input,
