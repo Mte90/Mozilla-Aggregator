@@ -13,15 +13,18 @@ xhr.open("GET", "sites.json", true);
 xhr.onreadystatechange = function() {
   if (xhr.status === 200 && xhr.readyState === 4) {
     var sites = JSON.parse(xhr.responseText);
-    var list = sub_list = '';
+    var list = sub_list = list_settings = switch_settings = '';
     for (var group in sites) {
-      sub_list = '';
-      list += '<h2>' + group + '</h2>';
+      var sub_list = '';
+      var title = '<h2>' + group + '</h2>';
       for (var site in sites[group]) {
+        switch_settings += '<label class="pack-switch"><input type="checkbox"><span>' + site + '</span></label>';
         sub_list += '<li><a class="rss-open" href="#" data-url="' + sites[group][site] + '">' + site + '</a></li>';
       }
-      list += '<ul>' + sub_list + '</ul>';
+      list_settings += title + switch_settings;
+      list += title + '<ul>' + sub_list + '</ul>';
     }
+    jQuery('.settings-list').html(list_settings);
     jQuery('.sites-list').html(list);
     jQuery('.rss-open').click(function() {
       jQuery("#rss-feeds").empty();
