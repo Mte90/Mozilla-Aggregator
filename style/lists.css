@@ -18,7 +18,7 @@
 }
 
 /* Title divisors */
-[data-type="list"] header {
+section header {
   padding: 0 1.5rem;
   margin: 0;
   font-size: 1.6rem;
@@ -217,6 +217,6 @@ li a:active {
 }
 
 /* Themes */
-.skin-comms [data-type="list"] header {
+.skin-comms header {
   color: #4997a7;
 }

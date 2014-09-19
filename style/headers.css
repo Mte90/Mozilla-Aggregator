@@ -163,54 +163,6 @@ section[role="region"] > header:first-child button:hover {
 }
 
 /* ----------------------------------
-  Icons
----------------------------------- */
-
-section[role="region"] > header:first-child .icon-add {
-  background-image: url(headers/images/icons/add.png);
-}
-
-section[role="region"] > header:first-child .icon-compose {
-  background-image: url(headers/images/icons/compose.png);
-}
-
-section[role="region"] > header:first-child .icon-edit {
-  background-image: url(headers/images/icons/edit.png);
-}
-
-section[role="region"] > header:first-child .icon-send {
-  background-image: url(headers/images/icons/send.png);
-}
-
-section[role="region"] > header:first-child .icon-close {
-  background-image: url(headers/images/icons/close.png);
-}
-
-section[role="region"] > header:first-child .icon-back {
-  background-image: url(headers/images/icons/back.png);
-}
-
-section[role="region"] > header:first-child .icon-menu {
-  background-image: url(headers/images/icons/menu.png);
-}
-
-section[role="region"] > header:first-child .icon-user {
-  background-image: url(headers/images/icons/user.png);
-}
-
-section[role="region"] > header:first-child .icon-up {
-  background-image: url(headers/images/icons/up.png);
-}
-
-section[role="region"] > header:first-child .icon-down {
-  background-image: url(headers/images/icons/down.png);
-}
-
-section[role="region"] > header:first-child .icon-options {
-  background-image: url(headers/images/icons/options.png);
-}
-
-/* ----------------------------------
   Subheader
 ---------------------------------- */
 
@@ -303,30 +255,6 @@ section[role="region"].skin-organic > header:first-child button,
 .skin-organic section[role="region"] > header:first-child a,
 .skin-organic section[role="region"] > header:first-child button {
   color: #00aac5;
-}
-
-/* ----------------------------------
-  Icons
----------------------------------- */
-
-section[role="region"].skin-organic > header:first-child .icon-back,
-.skin-organic section[role="region"] > header:first-child .icon-back {
-  background-image: url(headers/images/icons/organic/back.png);
-}
-
-section[role="region"].skin-organic > header:first-child .icon-close,
-.skin-organic section[role="region"] > header:first-child .icon-close {
-  background-image: url(headers/images/icons/organic/close.png);
-}
-
-section[role="region"].skin-organic > header:first-child .icon-add,
-.skin-organic section[role="region"] > header:first-child .icon-add {
-  background-image: url(headers/images/icons/organic/add.png);
-}
-
-section[role="region"].skin-organic > header:first-child .icon-edit,
-.skin-organic section[role="region"] > header:first-child .icon-edit {
-  background-image: url(headers/images/icons/organic/edit.png);
 }
 
 /* ----------------------------------
