@@ -40,6 +40,7 @@ xhr.onreadystatechange = function () {
         effect: 'slideFastSynced',
         entryTemplate: '<li><a href="#" data-news="{url}">{author} - {date}<br>{title}</a></li>'
       });
+      jQuery("header h1").html('Mozilla Aggregator - ' + jQuery(this).html());
     });
     jQuery('#rss-feeds').on('click', 'a', function () {
       if (locationbar.visible) {
