@@ -1,16 +1,23 @@
 //switches
-document.querySelector('#btn-settings').addEventListener('click', function() {
+document.querySelector('#btn-settings').addEventListener('click', function () {
   document.querySelector('#settings').className = 'current';
   document.querySelector('[data-position="current"]').className = 'left';
 });
-document.querySelector('#btn-settings-back').addEventListener('click', function() {
+document.querySelector('#btn-settings-back').addEventListener('click', function () {
   document.querySelector('#settings').className = 'right';
   document.querySelector('[data-position="current"]').className = 'current';
 });
 
+var appCache = window.applicationCache;
+if (appCache) {
+  appCache.onerror = function () {
+    alert('This app require a working internet connection!');
+  };
+}
+
 var xhr = new XMLHttpRequest({mozSystem: true});
 xhr.open("GET", "sites.json", true);
-xhr.onreadystatechange = function() {
+xhr.onreadystatechange = function () {
   if (xhr.status === 200 && xhr.readyState === 4) {
     var sites = JSON.parse(xhr.responseText);
     var list = sub_list = list_settings = switch_settings = '';
@@ -26,7 +33,7 @@ xhr.onreadystatechange = function() {
     }
     jQuery('.settings-list').html(list_settings);
     jQuery('.sites-list').html(list);
-    jQuery('.rss-open').click(function() {
+    jQuery('.rss-open').click(function () {
       jQuery("#rss-feeds").empty();
       jQuery("#rss-feeds").rss(jQuery(this).data('url'), {
         limit: 10,
@@ -34,7 +41,7 @@ xhr.onreadystatechange = function() {
         entryTemplate: '<li><a href="#" data-news="{url}">{author} - {date}<br>{title}</a></li>'
       });
     });
-    jQuery('#rss-feeds').on('click','a',function() {
+    jQuery('#rss-feeds').on('click', 'a', function () {
       if (locationbar.visible) {
         var win = window.open(jQuery(this).data('news'), '_blank');
         win.focus();
@@ -51,7 +58,7 @@ xhr.onreadystatechange = function() {
   }
 };
 
-xhr.onerror = function() {
+xhr.onerror = function () {
   alert("Problems on loading sites list");
 };
 
