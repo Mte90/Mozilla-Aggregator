@@ -121,3 +121,11 @@ nav[data-type="scrollbar"] p {
 #rss-feeds li,[data-type="list"] li > a {
 	height:auto;
 }
+
+h1 {
+    text-transform: none;
+}
+
+#settings article header {
+    margin:10px -1.5rem;
+}
