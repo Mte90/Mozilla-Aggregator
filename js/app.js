@@ -23,13 +23,14 @@ xhr.onreadystatechange = function () {
     var list = sub_list = list_settings = switch_settings = '';
     for (var group in sites) {
       var sub_list = switch_settings = '';
-      var title = '<h2>' + group + '</h2>';
+      var title_drawer = '<h2>' + group + '</h2>';
+      var title_settings = '<header>' + group + '</header>';
       for (var site in sites[group]) {
         switch_settings += '<label class="pack-switch"><input type="checkbox"><span>' + site + '</span></label>';
         sub_list += '<li><a class="rss-open" href="#" data-url="' + sites[group][site] + '">' + site + '</a></li>';
       }
-      list_settings += title + switch_settings;
-      list += title + '<ul>' + sub_list + '</ul>';
+      list_settings += title_settings + switch_settings;
+      list += title_drawer + '<ul>' + sub_list + '</ul>';
     }
     jQuery('.settings-list').html(list_settings);
     jQuery('.sites-list').html(list);
@@ -40,7 +41,7 @@ xhr.onreadystatechange = function () {
         effect: 'slideFastSynced',
         entryTemplate: '<li><a href="#" data-news="{url}"><small>{author} - {date}</small><br>{title}</a></li>'
       });
-      jQuery("header h1").html('Mozilla Aggregator - ' + jQuery(this).html());
+      jQuery("#drawer h1").html('Mozilla Aggregator - ' + jQuery(this).html());
     });
     jQuery('#rss-feeds').on('click', 'a', function () {
       if (locationbar.visible) {
