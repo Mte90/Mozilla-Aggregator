@@ -1,7 +1,7 @@
 {
     "Global": {
-        "Blog": "http://blog.mozilla.org/feed",
-        "Quality": "http://quality.mozilla.org/feed/?cat=4,3"
+        "Official Blog": "http://blog.mozilla.org/feed",
+        "Mozilla Quality": "http://quality.mozilla.org/feed/?cat=4,3"
     },
     "Developer": {
         "MozHacks": "http://hacks.mozilla.org/feed"

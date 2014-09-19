@@ -22,7 +22,7 @@ xhr.onreadystatechange = function () {
     var sites = JSON.parse(xhr.responseText);
     var list = sub_list = list_settings = switch_settings = '';
     for (var group in sites) {
-      var sub_list = '';
+      var sub_list = switch_settings = '';
       var title = '<h2>' + group + '</h2>';
       for (var site in sites[group]) {
         switch_settings += '<label class="pack-switch"><input type="checkbox"><span>' + site + '</span></label>';
@@ -38,7 +38,7 @@ xhr.onreadystatechange = function () {
       jQuery("#rss-feeds").rss(jQuery(this).data('url'), {
         limit: 10,
         effect: 'slideFastSynced',
-        entryTemplate: '<li><a href="#" data-news="{url}">{author} - {date}<br>{title}</a></li>'
+        entryTemplate: '<li><a href="#" data-news="{url}"><small>{author} - {date}</small><br>{title}</a></li>'
       });
       jQuery("header h1").html('Mozilla Aggregator - ' + jQuery(this).html());
     });
