@@ -73,6 +73,7 @@ xhr.onreadystatechange = function () {
         });
       }
     });
+    jQuery('.rss-open:first').trigger( "click" );
   }
 };
 
