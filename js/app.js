@@ -53,7 +53,7 @@ xhr.onreadystatechange = function () {
     jQuery('.rss-open').click(function () {
       jQuery("#rss-feeds").empty();
       jQuery("#rss-feeds").rss(jQuery(this).data('url'), {
-        limit: 10,
+        limit: settings['limit'],
         effect: 'slideFastSynced',
         entryTemplate: '<li><a href="#" data-news="{url}"><small>{author} - {date}</small><br>{title}</a></li>'
       });
@@ -73,16 +73,21 @@ xhr.onreadystatechange = function () {
         });
       }
     });
-    jQuery('.site').click(function () {
-      localforage.setItem(jQuery(this).data('site'), this.checked ? this.value : '');
-      settings[jQuery(this).data('site')] = this.checked ? this.value : '';
-      jQuery('.rss-open[data-site="' + jQuery(this).data('site') + '"]').toggle();
-    });
   }
 };
 
 xhr.onerror = function () {
   alert("Problems on loading sites list");
 };
+
+jQuery('.site').click(function () {
+  localforage.setItem(jQuery(this).data('site'), this.checked ? this.value : '');
+  settings[jQuery(this).data('site')] = this.checked ? this.value : '';
+  jQuery('.rss-open[data-site="' + jQuery(this).data('site') + '"]').toggle();
+});
+
+jQuery(".number-limit").change(function () {
+  localforage.setItem('limit', jQuery('.number-limit').val());
+});
 
 loadsettings();
