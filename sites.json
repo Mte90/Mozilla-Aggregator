@@ -1,10 +1,15 @@
 {
     "Global": {
         "Official Blog": "http://blog.mozilla.org/feed",
-        "Mozilla Quality": "http://quality.mozilla.org/feed/?cat=4,3"
+        "Mozilla Quality": "http://quality.mozilla.org/feed/?cat=4,3",
+        "Mozilla Security": "https://blog.mozilla.org/security/feed",
+        "Mozilla Cloud Services": "http://blog.mozilla.org/services/feed",
+        "Mozilla Addons": "https://blog.mozilla.org/addons/feed",
+        "Mozilla Future Releases": "http://blog.mozilla.org/futurereleases/feed"
     },
     "Developer": {
-        "MozHacks": "http://hacks.mozilla.org/feed"
+        "MozHacks": "http://hacks.mozilla.org/feed",
+        "Mozilla Web Development": "http://blog.mozilla.org/webdev/feed"
     },
     "Community": {
         "Mozilla Italia": "http://mozillaitalia.org/feed"

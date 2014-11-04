@@ -5,6 +5,7 @@ function loadsettings() {
     settings[key] = value;
   }, function () {
     xhr.send();
+    jQuery(".number-limit").val(settings['limit']);
   });
 }
 

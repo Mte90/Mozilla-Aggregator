@@ -129,3 +129,6 @@ h1 {
 #settings article header {
     margin:10px -1.5rem;
 }
+#rss-feeds small {
+    float:right;
+}
