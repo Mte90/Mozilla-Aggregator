@@ -1,3 +1,13 @@
+var settings = [];
+
+function loadsettings() {
+  localforage.iterate(function (value, key) {
+    settings[key] = value;
+  }, function () {
+    xhr.send();
+  });
+}
+
 //switches
 document.querySelector('#btn-settings').addEventListener('click', function () {
   document.querySelector('#settings').className = 'current';
@@ -26,8 +36,14 @@ xhr.onreadystatechange = function () {
       var title_drawer = '<h2>' + group + '</h2>';
       var title_settings = '<header>' + group + '</header>';
       for (var site in sites[group]) {
-        switch_settings += '<label class="pack-switch"><input type="checkbox"><span>' + site + '</span></label>';
-        sub_list += '<li><a class="rss-open" href="#" data-url="' + sites[group][site] + '">' + site + '</a></li>';
+        var check = none = '';
+        if (settings[site] === undefined || settings[site] === 'on') {
+          check = ' checked';
+        } else {
+          none = 'style="display:none;"';
+        }
+        sub_list += '<li><a class="rss-open" href="#" data-site="' + site + '" data-url="' + sites[group][site] + '"' + none + '>' + site + '</a></li>';
+        switch_settings += '<label class="pack-switch"><input class="site" type="checkbox" data-site="' + site + '" ' + check + '><span>' + site + '</span></label>';
       }
       list_settings += title_settings + switch_settings;
       list += title_drawer + '<ul>' + sub_list + '</ul>';
@@ -57,6 +73,11 @@ xhr.onreadystatechange = function () {
         });
       }
     });
+    jQuery('.site').click(function () {
+      localforage.setItem(jQuery(this).data('site'), this.checked ? this.value : '');
+      settings[jQuery(this).data('site')] = this.checked ? this.value : '';
+      jQuery('.rss-open[data-site="' + jQuery(this).data('site') + '"]').toggle();
+    });
   }
 };
 
@@ -64,5 +85,4 @@ xhr.onerror = function () {
   alert("Problems on loading sites list");
 };
 
-xhr.send();
-
+loadsettings();
